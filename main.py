@@ -11,3 +11,12 @@ def home():
 def chat(message: str):
     reply = ask_ai(message)
     return {"reply": reply}
+@app.get("/send")
+def send(message: str):
+    reply = ask_ai(message)
+    return {
+        "from": "SmartMall",
+        "to": "customer",
+        "message_received": message,
+        "reply": reply
+    }
