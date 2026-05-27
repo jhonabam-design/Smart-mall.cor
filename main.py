@@ -20,3 +20,21 @@ def send(message: str):
         "message_received": message,
         "reply": reply
     }
+products = [
+    {
+        "id": 1,
+        "name": "Nike Air",
+        "price": 450,
+        "stock": 12
+    },
+    {
+        "id": 2,
+        "name": "iPhone 13",
+        "price": 5200,
+        "stock": 4
+    }
+]
+
+@app.get("/products")
+def get_products():
+    return products
